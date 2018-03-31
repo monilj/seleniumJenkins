@@ -14,6 +14,7 @@ public class basicSelenium {
         driver.get(baseUrl);
         driver.findElement(By.name("q")).sendKeys("selnium");
         driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
+        System.out.println("thanks");
         driver.close();
 
 

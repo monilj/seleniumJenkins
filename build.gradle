@@ -2,6 +2,7 @@ group 'Sele'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'application'
 
 sourceCompatibility = 1.8
 
@@ -14,6 +15,7 @@ dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.11.0'
 
 }
-task hello << {
-    println 'Hello Gradle'
+task(runMain, dependsOn: 'classes', type: JavaExec) {
+    main = 'basicSelenium'
+    classpath = sourceSets.main.runtimeClasspath
 }
